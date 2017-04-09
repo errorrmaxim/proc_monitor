@@ -37,7 +37,7 @@ int main(int argc, char *argv[])
 	//update every 10 sec
 	if(fg == 10)
          {
-            main_vec = proc_vector();
+            update_data(main_vec, s);
             fg = 0;
          }
 

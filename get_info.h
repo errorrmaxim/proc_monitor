@@ -69,6 +69,7 @@ T my_round(T pcpu, int N)
 
 
 //sort functions for more comfortable 
+typedef proc_info p_inf;
  bool sort_pid(const p_inf& lhs, const p_inf& rhs);
  bool by_virt(const p_inf& lhs, const p_inf& rhs);
  bool by_act(const p_inf& lhs, const p_inf& rhs);
@@ -99,7 +100,7 @@ public:
         default: return sort_pid(lhs, rhs); break;
         }
     return sort_pid(lhs, rhs);
-        //
+        
     }
  void set_flag(char ch)
     {
@@ -107,6 +108,7 @@ public:
     }
 };
 
+void update_data(vector<proc_info>&, sort_fctr&);
 vector<proc_info>proc_vector();
 string set_rows(vector<proc_info>&mn_vec);
 string get_header();

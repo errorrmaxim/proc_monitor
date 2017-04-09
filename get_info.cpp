@@ -188,6 +188,12 @@ string system_info()
     return ss.str();
 }
 
+void update_data(vector<proc_info>&mn_vec, sort_fctr &rf)
+{
+    mn_vec = proc_vector();
+    sort(mn_vec.begin(), mn_vec.end(), rf);
+
+}
 
 bool sort_pid(const p_inf& lhs, const p_inf& rhs) {return lhs.GET_PID() < rhs.GET_PID();}
 bool by_virt(const p_inf& lhs, const p_inf& rhs) {return lhs.GET_VIRT() > rhs.GET_VIRT();}
